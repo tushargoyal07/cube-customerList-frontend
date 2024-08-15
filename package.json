@@ -1,0 +1,29 @@
+{
+  "name": "cube_as",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/react-lazy-load-image-component": "^1.6.4",
+    "axios": "^1.7.4",
+    "cube_as": "file:",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-lazy-load": "^4.0.1",
+    "react-lazy-load-image-component": "^1.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
