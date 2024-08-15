@@ -88,7 +88,7 @@ const CustomerPage: React.FC<CustomerPageProps> = ({ customer }) => {
           {`${customer.location.street.number} ${customer.location.street.name}, ${customer.location.city}, ${customer.location.state}, ${customer.location.country}`}
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 p-20">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-16 sm:p-10 md:p-20">
       {Array(9).fill(null).map((_, index) => (
           <ImageGridCard key={index} imageUrl={images[index]} loading={loading} />
         ))}

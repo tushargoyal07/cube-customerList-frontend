@@ -49,7 +49,7 @@ export default function Home() {
         );
         const newCustomers = responses.map(response => {
           const user = response.data.results[0];
-          console.log(user,'user');
+          console.log(user, 'user');
           return {
             id: user.login.uuid,
             name: `${user.name.first} ${user.name.last}`,
@@ -65,7 +65,7 @@ export default function Home() {
       }
       setLoading(false);
     };
-   fetchCustomers();
+    fetchCustomers();
 
     // const dummyCustomers: Customer[] = Array.from({ length: 1000 }, (_, i) => ({
     //   id: i + 1,
@@ -76,45 +76,45 @@ export default function Home() {
     // setCustomers(dummyCustomers);
   }, [currentPage]);
 
- 
+
 
   const handleCustomerClick = (customer: Customer) => {
     setSelectedCustomer(customer);
   };
 
   return (
-     <>
-     <div className="text-center font-bold text-lg p-2 border-b">Customer List</div>
-    <main className="flex h-screen ">
-      <div className="w-2/6 flex flex-col h-full overflow-hidden ">
-      <div className="flex-grow overflow-y-auto custom-scrollbar">
-          { (
-            customers
-              .slice((currentPage - 1) * customersPerPage, currentPage * customersPerPage)
-              .map((customer) => (
-                <CustomerCard
-                  key={customer.id}
-                  customer={customer}
-                  loading={loading}
-                  onClick={() => handleCustomerClick(customer)}
-                />
-              ))
-          )}
-        </div>
-        <div className="p-4 ">
-          <Pagination
-            customersPerPage={customersPerPage}
-            totalCustomers={1000}
-            paginate={setCurrentPage}
-            currentPage={currentPage}
-          />
-        </div>
+    <main className=' h-screen flex flex-col'>
+      <h1 className="text-center font-bold text-lg p-2 border-b sticky top-0 bg-white z-10">Customer List</h1>
+      <div className="sm:flex flex-grow sm:overflow-hidden">
+        <div className="sm:w-2/6 flex flex-col sm:overflow-hidden ">
+          <div className="flex-grow overflow-y-auto custom-scrollbar">
+            {(
+              customers
+                .slice((currentPage - 1) * customersPerPage, currentPage * customersPerPage)
+                .map((customer) => (
+                  <CustomerCard
+                    key={customer.id}
+                    customer={customer}
+                    loading={loading}
+                    onClick={() => handleCustomerClick(customer)}
+                  />
+                ))
+            )}
+          </div>
+          <div className="p-4 ">
+            <Pagination
+              customersPerPage={customersPerPage}
+              totalCustomers={1000}
+              paginate={setCurrentPage}
+              currentPage={currentPage}
+            />
+          </div>
 
-      </div>
-      <div className="w-4/5 h-full overflow-y-auto border-l">
-        <CustomerPage customer={selectedCustomer} />
+        </div>
+        <div className="sm:w-4/5 overflow-y-auto border-l">
+          <CustomerPage customer={selectedCustomer} />
+        </div>
       </div>
     </main>
-    </>
   );
 }
