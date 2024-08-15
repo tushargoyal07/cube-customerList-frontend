@@ -81,7 +81,7 @@ const CustomerPage: React.FC<CustomerPageProps> = ({ customer }) => {
   return (
     
     <div className='p-10'>
-      <div className="flex flex-col gap-6 items-center mb-10">
+      <div className="flex flex-col gap-6 items-center ">
         <h1 className='text-3xl font-bold'>{customer.name}</h1>
         <h3 className='text-md text-gray-500'>{customer.email}</h3>
         <p className='text-md text-gray-500'>
